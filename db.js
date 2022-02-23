@@ -17,7 +17,7 @@ if(process.env.NODE_ENV == 'produccion'){
 const DATABASE_NAME = process.env.DATABASE_NAME || 'azure-todo-app-no-voy';
 
 mongoose.connect(mongoDB, {
-    dbName: process.env.DATABASE_NAME,
+    dbName: DATABASE_NAME,
     useNewUrlParser: true, 
     useUnifiedTopology: true})
 const db = mongoose.connection
