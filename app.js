@@ -13,6 +13,8 @@ const Store = require('express-session').Store
 const MongooseStore = require('mongoose-express-session')(Store)
 
 
+const DATABASE_NAME = process.env.DATABASE_NAME || 'azure-todo-app-no-voy';
+
 mongoose.connect('mongodb://127.0.0.1/notas2', {
   dbName: process.env.DATABASE_NAME,
   useNewUrlParser: true, 
