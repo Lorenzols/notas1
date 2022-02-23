@@ -4,16 +4,19 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-
+require('dotenv').config()
 const hbs = require('hbs')
 const passport = require('passport');
 require('./lib/passport')
 const mongoose = require('mongoose');
 const Store = require('express-session').Store
 const MongooseStore = require('mongoose-express-session')(Store)
-require('dotenv').config()
 
-mongoose.connect('mongodb://127.0.0.1/notas2', {useNewUrlParser: true, useUnifiedTopology: true})
+
+mongoose.connect('mongodb://127.0.0.1/notas2', {
+  dbName: process.env.DATABASE_NAME,
+  useNewUrlParser: true, 
+  useUnifiedTopology: true})
 require('./db')
 
 var indexRouter = require('./routes/index');
