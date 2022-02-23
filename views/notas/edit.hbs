@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>EDIT</h1>
+    <form action="/notas/edit/{{nota._id}}" method="post">
+        <input type="text" placeholder="title" name="title" value="{{nota.title}}">
+        <input type="text" placeholder="description" name="description" value="{{nota.description}}">
+        <button type="submit">Edit</button>
+    </form>
+</div>
