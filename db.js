@@ -2,17 +2,8 @@ const mongoose = require('mongoose')
 
 // const mongoDB = 'mongodb://127.0.0.1/notas2'
 
-let mongoDB = ""
+const mongoDB = process.env.MONGO_PROD
 
-
-if(process.env.NODE_ENV == 'produccion'){
-    mongoDB = process.env.MONGO_PROD
-    console.log("produccion: ",process.env.MONGO_PROD)
-}else{
-    mongoDB = process.env.MONGO_DEV
-    console.log("dev: ",process.env.MONGO_DEV)
-
-}
 
 const DATABASE_NAME = process.env.DATABASE_NAME || 'azure-todo-app-no-voy';
 
