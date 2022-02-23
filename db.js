@@ -14,7 +14,10 @@ if(process.env.NODE_ENV == 'produccion'){
 
 }
 
-mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(mongoDB, {
+    dbName: process.env.DATABASE_NAME,
+    useNewUrlParser: true, 
+    useUnifiedTopology: true})
 const db = mongoose.connection
 
 db.on('error', console.error.bind("error DB"))
